@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alex Kulikov CV</title>
+    <script>
+      var pdfUrl = "../alexeyqu_cv.pdf";
+      var forceEmbed = window.location.search.indexOf("embed") !== -1;
+      var hasCoarsePointer =
+        window.matchMedia && window.matchMedia("(pointer: coarse)").matches;
+      var isMobilePdfHostile =
+        /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) ||
+        (navigator.maxTouchPoints > 1 && hasCoarsePointer);
+
+      if (!forceEmbed && isMobilePdfHostile) {
+        window.location.replace(pdfUrl);
+      }
+    </script>
     <style>
       html,
       body {
@@ -20,8 +33,13 @@
       .pdf-viewer {
         border: 0;
         display: block;
-        height: 100vh;
+        height: 100dvh;
+        min-height: 100vh;
         width: 100%;
+      }
+
+      .mobile-open {
+        display: none;
       }
 
       .fallback {
@@ -34,9 +52,31 @@
       .fallback a {
         color: #fff;
       }
+
+      @media (hover: none), (pointer: coarse), (max-width: 768px) {
+        .pdf-viewer {
+          display: none;
+        }
+
+        .mobile-open {
+          display: grid;
+          min-height: 100vh;
+          place-items: center;
+          text-align: center;
+        }
+
+        .mobile-open a {
+          color: #fff;
+        }
+      }
     </style>
   </head>
   <body>
+    <main class="mobile-open">
+      <p>
+        <a href="../alexeyqu_cv.pdf">Open Alex Kulikov CV</a>
+      </p>
+    </main>
     <object class="pdf-viewer" data="../alexeyqu_cv.pdf" type="application/pdf">
       <div class="fallback">
         <p>

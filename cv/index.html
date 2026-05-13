@@ -4,19 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alex Kulikov CV</title>
-    <script>
-      var pdfUrl = "../alexeyqu_cv.pdf";
-      var forceEmbed = window.location.search.indexOf("embed") !== -1;
-      var hasCoarsePointer =
-        window.matchMedia && window.matchMedia("(pointer: coarse)").matches;
-      var isMobilePdfHostile =
-        /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) ||
-        (navigator.maxTouchPoints > 1 && hasCoarsePointer);
-
-      if (!forceEmbed && isMobilePdfHostile) {
-        window.location.replace(pdfUrl);
-      }
-    </script>
     <style>
       html,
       body {

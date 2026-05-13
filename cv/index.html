@@ -1,9 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alex Kulikov CV</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+
+      body {
+        background: #101214;
+        color: #fff;
+        font-family: Helvetica, Arial, sans-serif;
+      }
+
+      .pdf-viewer {
+        border: 0;
+        display: block;
+        height: 100vh;
+        width: 100%;
+      }
+
+      .fallback {
+        display: grid;
+        min-height: 100vh;
+        place-items: center;
+        text-align: center;
+      }
+
+      .fallback a {
+        color: #fff;
+      }
+    </style>
   </head>
   <body>
-    <iframe src="https://docs.google.com/gview?url=https://lxqu.dev/alexeyqu_cv.pdf&embedded=true" style="min-height:100vh;width:100%;" frameborder="0"></iframe>
+    <object class="pdf-viewer" data="../alexeyqu_cv.pdf" type="application/pdf">
+      <div class="fallback">
+        <p>
+          CV preview is unavailable.
+          <a href="../alexeyqu_cv.pdf">Open the PDF directly.</a>
+        </p>
+      </div>
+    </object>
   </body>
 </html>

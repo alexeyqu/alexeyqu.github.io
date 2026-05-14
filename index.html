@@ -84,6 +84,8 @@
                     </a>
                 </div>
                 -->
+
+                <p class="fun-fact" id="fun-fact"></p>
             </div>
         </main>
 
@@ -147,6 +149,17 @@
                 console.error(e);
             }
         }
+
+        const facts = [
+            'Makes dried orange slices as New Year gifts.',
+            'Finalist at the All-Russian French Language Olympiad.',
+            'Volunteered as a helpline support operator.',
+            'Taught maths, Python, and compilers — 7 years across school and university.',
+            'Sang in a choir for 3 years and can hold a harmony in Let It Go.',
+            'Performed "Take Me to Church" by Hozier on ukulele at an open mic.',
+        ];
+        document.getElementById('fun-fact').textContent =
+            '// ' + facts[Math.floor(Math.random() * facts.length)];
 
         fetchCommits();
     </script>

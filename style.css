@@ -148,6 +148,18 @@ header {
     color: var(--accent);
 }
 
+/* Fun fact */
+.fun-fact {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 300;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+    font-style: italic;
+    animation: fadeUp 0.7s ease 0.5s both;
+}
+
 /* Writing / Substack */
 .writing {
     animation: fadeUp 0.7s ease 0.45s both;

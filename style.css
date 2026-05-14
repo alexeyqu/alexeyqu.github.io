@@ -151,13 +151,36 @@ header {
 /* Fun fact */
 .fun-fact {
     font-family: var(--font-mono);
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     font-weight: 300;
     color: var(--muted);
+    opacity: 0.6;
     letter-spacing: 0.04em;
     line-height: 1.5;
     font-style: italic;
     animation: fadeUp 0.7s ease 0.5s both;
+}
+
+/* Fun fact credit */
+.fun-fact-credit {
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    font-weight: 300;
+    color: var(--muted);
+    opacity: 0.45;
+    letter-spacing: 0.04em;
+    animation: fadeUp 0.7s ease 0.6s both;
+}
+
+.fun-fact-credit a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.fun-fact-credit a:hover {
+    color: var(--accent);
+    opacity: 1;
 }
 
 /* Writing / Substack */

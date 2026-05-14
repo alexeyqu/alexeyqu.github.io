@@ -1,47 +1,296 @@
-/* global */
+:root {
+    --bg: #0A0908;
+    --text: #F0EBE3;
+    --muted: #918D88;
+    --faint: #242220;
+    --accent: #C4A472;
+    --border: rgba(196, 164, 114, 0.18);
+    --font-serif: 'Cormorant Garamond', 'Georgia', serif;
+    --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+}
 
-body{
+*, *::before, *::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Helvetica', sans-serif;
-    background-color: #101214;
-    color: #7A7C80;
-
 }
 
-h2,.white{
-    color: #fff;
+body {
+    min-height: 100vh;
+    background-color: var(--bg);
+    background-image: radial-gradient(ellipse at 30% 40%, #161412 0%, #0A0908 65%);
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(3rem, 8vh, 6rem) clamp(2rem, 8vw, 6rem);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 
-a{
-    color: #7A7C80;
+/* Noise overlay */
+.noise {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.035;
+    z-index: 10;
+}
+
+/* Two-column layout */
+.layout {
+    display: grid;
+    grid-template-columns: minmax(280px, 400px) 1fr;
+    gap: clamp(3rem, 7vw, 7rem);
+    width: 100%;
+    max-width: 1000px;
+    align-items: center;
+}
+
+/* Left column */
+.container {
+    width: 100%;
+    min-width: 0;
+}
+
+.inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    border-left: 1px solid var(--border);
+    padding-left: 1.75rem;
+}
+
+/* Header */
+header {
+    animation: fadeUp 0.7s ease both;
+}
+
+.name {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--text);
+}
+
+.handle {
+    font-family: var(--font-mono);
+    font-weight: 300;
+    font-size: 0.65rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    margin-top: 0.65rem;
+}
+
+/* Divider */
+.divider {
+    height: 1px;
+    background: var(--faint);
+    animation: fadeUp 0.7s ease 0.1s both;
+}
+
+/* Bio */
+.bio {
+    animation: fadeUp 0.7s ease 0.2s both;
+}
+
+.role {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: 0.72rem;
+    color: var(--text);
+    letter-spacing: 0.05em;
+}
+
+.focus {
+    font-family: var(--font-mono);
+    font-weight: 300;
+    font-size: 0.68rem;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+    margin-top: 0.4rem;
+}
+
+/* Social links */
+.socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.1rem 0;
+    animation: fadeUp 0.7s ease 0.35s both;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.38rem;
+    font-family: var(--font-mono);
+    font-size: 0.63rem;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    color: var(--muted);
     text-decoration: none;
+    padding: 0.38rem 0.75rem 0.38rem 0;
+    transition: color 0.2s ease;
 }
 
-.about{
-    padding-top: 40vh;
-    text-align: center;
+.social-link svg {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
 }
 
-.about p{
-    font-size: 1.1rem;
-    padding-bottom: 10px;
-    margin:0;
+.social-link:hover {
+    color: var(--accent);
 }
 
-.about h2{
-    font-size: 1.7rem;
-    margin-bottom: 10px;
+/* Writing / Substack */
+.writing {
+    animation: fadeUp 0.7s ease 0.45s both;
 }
 
-.about a{
-    font-size: 1.5rem;
-    padding: 10px;
+.substack-link {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
-/* animations / utilities */
-.about a:hover{
-    color: #fff;
-    cursor: pointer;
-    transition: 0.3s;
+.substack-link:hover {
+    color: var(--accent);
+}
+
+/* Right column — commit feed */
+.feed {
+    min-width: 0;
+    animation: fadeUp 0.7s ease 0.45s both;
+    align-self: center;
+}
+
+.feed-label {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+}
+
+.feed-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.feed-loading,
+.feed-empty {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 300;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+}
+
+.feed-item {
+    border-left: 1px solid var(--faint);
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    transition: border-color 0.2s ease;
+}
+
+.feed-item:hover {
+    border-color: var(--accent);
+}
+
+.feed-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.feed-repo {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    font-weight: 400;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+}
+
+.feed-repo:hover {
+    text-decoration: underline;
+}
+
+.feed-sha a {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    font-weight: 300;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    opacity: 0.7;
+}
+
+.feed-sha a:hover {
+    color: var(--text);
+}
+
+.feed-time {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    font-weight: 300;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    opacity: 0.6;
+    margin-left: auto;
+}
+
+.feed-message {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 300;
+    color: var(--text);
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+/* Animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile — stack vertically, top-aligned */
+@media (max-width: 700px) {
+    body {
+        align-items: flex-start;
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .feed {
+        border-top: 1px solid var(--faint);
+        padding-top: 2rem;
+    }
 }

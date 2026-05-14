@@ -3,21 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <meta name="description" content="Alex Kulikov — Founding Backend Engineer. AI infrastructure & data portability. London.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Alex Kulikov</title>
 </head>
 <body>
-	<div class="about">
-		<i class="fas fa-code fa-5x white"></i>
-		<h2>Alex Kulikov</h2>
-		<p>Software Engineer</p>
-		<h3>@alexeyqu</h3>
-		<a href="https://lxqu.dev/cv/"><i class="far fa-file-pdf"></i></a>
-		<a href="https://github.com/alexeyqu/"><i class="fab fa-github"></i></a>
-		<a href="https://instagram.com/alexeyqu/"><i class="fab fa-instagram"></i></a>
-		<a href="https://www.linkedin.com/in/alexeyqu/"><i class="fab fa-linkedin"></i></a>
-	</div>
+    <svg class="noise" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <filter id="noise">
+            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+            <feColorMatrix type="saturate" values="0"/>
+        </filter>
+        <rect width="100%" height="100%" filter="url(#noise)"/>
+    </svg>
+
+    <div class="layout">
+        <main class="container">
+            <div class="inner">
+                <header>
+                    <h1 class="name">Alex Kulikov</h1>
+                    <p class="handle">@alexeyqu</p>
+                </header>
+
+                <div class="divider"></div>
+
+                <div class="bio">
+                    <p class="role">Founding Backend Engineer</p>
+                    <p class="focus">AI infrastructure &amp; data portability &thinsp;&middot;&thinsp; London</p>
+                </div>
+
+                <nav class="socials" aria-label="Social links">
+                    <a href="https://lxqu.dev/cv/" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                        </svg>
+                        <span>cv</span>
+                    </a>
+                    <a href="https://github.com/alexeyqu" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                        </svg>
+                        <span>github</span>
+                    </a>
+                    <a href="https://linkedin.com/in/alexeyqu" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                        <span>linkedin</span>
+                    </a>
+                    <a href="https://x.com/alexeyqu" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.736-8.857L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                        <span>x</span>
+                    </a>
+                    <a href="https://mastodon.social/@alexeyqu" target="_blank" rel="me noopener noreferrer" class="social-link">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M23.268 5.313c-.35-2.578-2.617-4.61-5.228-5.043C17.886.197 15.595 0 13.29 0h-.05C10.933 0 8.64.197 8.504.27 5.896.703 3.63 2.734 3.28 5.313c-.322 2.407-.32 5.239-.32 5.239s-.015 3.036.384 5.592c.57 3.619 4.285 5.025 7.564 5.177 2.926.138 5.836-.69 5.836-.69l-.126-2.767s-2.674.843-5.676.74c-2.972-.1-6.11-.315-6.588-3.892a7.492 7.492 0 0 1-.065-1.054s2.922.714 6.626.787c2.262.047 4.388-.577 5.834-1.606.116-.082.23-.168.34-.257a6.95 6.95 0 0 0 2.41-4.52c.074-.555.122-1.125.141-1.708.004-.12.006-.24.006-.36V5.314zM19.8 11.49h-2.87V6.956c0-1.291-.54-1.948-1.624-1.948-1.197 0-1.796.776-1.796 2.308v3.354h-2.855V7.316c0-1.532-.599-2.308-1.796-2.308-1.084 0-1.624.657-1.624 1.948v4.534H4.364V6.774c0-1.29.328-2.315.987-3.077.678-.762 1.566-1.153 2.668-1.153 1.275 0 2.24.49 2.879 1.47l.62 1.04.622-1.04c.639-.98 1.603-1.47 2.878-1.47 1.102 0 1.99.39 2.668 1.153.659.762.987 1.787.987 3.077l.127 4.716z"/>
+                        </svg>
+                        <span>mastodon</span>
+                    </a>
+                    <a href="mailto:hire@lxqu.dev" class="social-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        <span>email</span>
+                    </a>
+                </nav>
+
+                <!-- Uncomment when Substack is live:
+                <div class="writing">
+                    <a href="https://alexeyqu.substack.com" target="_blank" rel="noopener noreferrer" class="substack-link">
+                        Writing on Substack &rarr;
+                    </a>
+                </div>
+                -->
+            </div>
+        </main>
+
+        <aside class="feed" aria-label="Recent commits">
+            <p class="feed-label">// recent commits</p>
+            <ul class="feed-list" id="commit-feed">
+                <li class="feed-loading">fetching&hellip;</li>
+            </ul>
+        </aside>
+    </div>
+
+    <script>
+        function timeAgo(dateStr) {
+            const diff = Date.now() - new Date(dateStr);
+            const mins = Math.floor(diff / 60000);
+            const hours = Math.floor(mins / 60);
+            const days = Math.floor(hours / 24);
+            if (mins < 1) return 'just now';
+            if (mins < 60) return mins + 'm ago';
+            if (hours < 24) return hours + 'h ago';
+            return days + 'd ago';
+        }
+
+        function escapeHtml(str) {
+            return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }
+
+        async function fetchCommits() {
+            const list = document.getElementById('commit-feed');
+            try {
+                const res = await fetch(
+                    'https://api.github.com/search/commits?q=author:alexeyqu&sort=committer-date&order=desc&per_page=5',
+                    { headers: { 'Accept': 'application/vnd.github.cloak-preview' } }
+                );
+                if (!res.ok) throw new Error('HTTP ' + res.status);
+                const data = await res.json();
+                const items = data.items || [];
+
+                if (items.length === 0) {
+                    list.innerHTML = '<li class="feed-empty">no recent public commits</li>';
+                    return;
+                }
+
+                list.innerHTML = items.map(function(item) {
+                    const repo = item.repository.name;
+                    const repoUrl = 'https://github.com/' + item.repository.full_name;
+                    const sha = item.sha.slice(0, 7);
+                    const message = item.commit.message.split('\n')[0];
+                    const time = item.commit.committer.date;
+                    return '<li class="feed-item">' +
+                        '<div class="feed-meta">' +
+                            '<a href="' + repoUrl + '" target="_blank" rel="noopener noreferrer" class="feed-repo">' + escapeHtml(repo) + '</a>' +
+                            '<span class="feed-sha"><a href="' + item.html_url + '" target="_blank" rel="noopener noreferrer">' + sha + '</a></span>' +
+                            '<span class="feed-time">' + timeAgo(time) + '</span>' +
+                        '</div>' +
+                        '<p class="feed-message">' + escapeHtml(message) + '</p>' +
+                    '</li>';
+                }).join('');
+            } catch (e) {
+                list.innerHTML = '<li class="feed-empty">' + (e && e.message ? escapeHtml(e.message) : 'fetch failed') + '</li>';
+                console.error(e);
+            }
+        }
+
+        fetchCommits();
+    </script>
 </body>
 </html>

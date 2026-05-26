@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="fix: replace prod password with devpass — CCCL #6, 26 May 2026">
+  <meta name="description" content="Talks by Alex Kulikov">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
-  <title>fix: replace prod password with devpass — Alex Kulikov</title>
+  <title>Talks — Alex Kulikov</title>
   <style>
     :root {
       --bg: #0A0908;
@@ -40,7 +40,7 @@
       width: 100%; max-width: 680px;
       border-left: 1px solid var(--border);
       padding-left: 1.75rem;
-      display: flex; flex-direction: column; gap: 2rem;
+      display: flex; flex-direction: column; gap: 2.5rem;
       animation: fadeUp 0.7s ease both;
     }
     .back {
@@ -49,32 +49,36 @@
       transition: color 0.2s ease;
     }
     .back:hover { color: var(--accent); }
-    .meta {
-      display: flex; flex-direction: column; gap: 0.5rem;
-    }
-    .event {
+    .heading {
       font-size: 0.6rem; font-weight: 300; letter-spacing: 0.12em;
       color: var(--muted); text-transform: uppercase;
     }
-    .date {
-      font-size: 0.6rem; font-weight: 300; letter-spacing: 0.08em;
+    .talk-list {
+      list-style: none; display: flex; flex-direction: column; gap: 1.75rem;
+    }
+    .talk {
+      border-left: 1px solid var(--faint);
+      padding-left: 1rem;
+      display: flex; flex-direction: column; gap: 0.4rem;
+      transition: border-color 0.2s ease;
+    }
+    .talk:hover { border-color: var(--accent); }
+    .talk-meta {
+      font-size: 0.58rem; font-weight: 300; letter-spacing: 0.08em;
       color: var(--muted); opacity: 0.7;
     }
-    h1 {
-      font-family: var(--font-mono);
-      font-weight: 400; font-size: clamp(1.1rem, 3vw, 1.5rem);
-      line-height: 1.2; color: var(--accent);
-      letter-spacing: 0.02em;
+    .talk-title {
+      font-family: var(--font-serif);
+      font-weight: 400; font-size: 1.15rem; line-height: 1.2;
     }
-    .note {
-      font-size: 0.62rem; font-weight: 300; font-style: italic;
-      color: var(--muted); opacity: 0.7; letter-spacing: 0.04em;
+    .talk-title a {
+      color: var(--text); text-decoration: none;
+      transition: color 0.2s ease;
     }
-    .divider { height: 1px; background: var(--faint); }
-    img {
-      width: 100%; height: auto;
-      border: 1px solid var(--faint);
-      display: block;
+    .talk-title a:hover { color: var(--accent); }
+    .talk-event {
+      font-size: 0.6rem; font-weight: 300; letter-spacing: 0.06em;
+      color: var(--muted);
     }
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(10px); }
@@ -94,19 +98,26 @@
     <rect width="100%" height="100%" filter="url(#noise)"/>
   </svg>
 
-  <article class="page">
-    <a href="/talks/" class="back">&larr; talks</a>
+  <main class="page">
+    <a href="/" class="back">&larr; alexeyqu</a>
+    <p class="heading">// talks</p>
 
-    <div class="meta">
-      <span class="event">CCCL #6 &mdash; Claude Code for Everyone</span>
-      <span class="date">26 May 2026 &middot; Old Street, London</span>
-    </div>
-
-    <h1>fix: replace prod password with devpass</h1>
-    <p class="note">// ⚡ lightning talk &middot; 2 min</p>
-
-    <div class="divider"></div>
-    <img src="cccl.png" alt="fix: replace prod password with devpass — slide">
-  </article>
+    <ul class="talk-list">
+      <li class="talk">
+        <span class="talk-meta">5 March 2025</span>
+        <h2 class="talk-title">
+          <a href="/talks/ai-tinkerers-openclaw/">I Fed My Instagram Archive to OpenClaw and Now It Knows I Love Tiramisu</a>
+        </h2>
+        <span class="talk-event">AI Tinkerers &mdash; OpenClaw Demo Night &middot; London</span>
+      </li>
+      <li class="talk">
+        <span class="talk-meta">26 May 2026</span>
+        <h2 class="talk-title">
+          <a href="/talks/cccl-6/">fix: replace prod password with devpass</a>
+        </h2>
+        <span class="talk-event">CCCL #6 &mdash; Claude Code for Everyone &middot; London &middot; ⚡ 2 min</span>
+      </li>
+    </ul>
+  </main>
 </body>
 </html>

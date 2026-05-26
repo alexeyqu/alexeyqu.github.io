@@ -55,7 +55,9 @@
     .event {
       font-size: 0.6rem; font-weight: 300; letter-spacing: 0.12em;
       color: var(--muted); text-transform: uppercase;
+      text-decoration: none; transition: color 0.2s ease;
     }
+    .event:hover { color: var(--accent); }
     .date {
       font-size: 0.6rem; font-weight: 300; letter-spacing: 0.08em;
       color: var(--muted); opacity: 0.7;
@@ -98,7 +100,7 @@
     <a href="/talks/" class="back">&larr; talks</a>
 
     <div class="meta">
-      <span class="event">CCCL #6 &mdash; Claude Code for Everyone</span>
+      <a href="https://meetups.cccl.ai/cccl-6/agenda" target="_blank" rel="noopener noreferrer" class="event">CCCL #6 &mdash; Claude Code for Everyone</a>
       <span class="date">26 May 2026 &middot; Old Street, London</span>
     </div>
 

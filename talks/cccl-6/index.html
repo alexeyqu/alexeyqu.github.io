@@ -79,8 +79,16 @@
       font-size: 0.6rem; font-weight: 300; letter-spacing: 0.12em;
       color: var(--muted); cursor: pointer; list-style: none;
       transition: color 0.2s ease;
+      display: flex; align-items: center; gap: 0.5rem;
     }
     summary::-webkit-details-marker { display: none; }
+    summary::before {
+      content: '▶';
+      font-size: 0.5rem;
+      transition: transform 0.2s ease;
+      display: inline-block;
+    }
+    details[open] summary::before { transform: rotate(90deg); }
     summary:hover { color: var(--accent); }
     details[open] summary { margin-bottom: 1.5rem; }
     .script {

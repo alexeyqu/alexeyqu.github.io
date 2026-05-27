@@ -73,6 +73,16 @@
       color: var(--muted); opacity: 0.7; letter-spacing: 0.04em;
     }
     .divider { height: 1px; background: var(--faint); }
+    details { border-left: 1px solid var(--faint); padding-left: 1rem; }
+    details[open] { border-color: var(--border); }
+    summary {
+      font-size: 0.6rem; font-weight: 300; letter-spacing: 0.12em;
+      color: var(--muted); cursor: pointer; list-style: none;
+      transition: color 0.2s ease;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary:hover { color: var(--accent); }
+    details[open] summary { margin-bottom: 1.5rem; }
     .script {
       display: flex; flex-direction: column; gap: 1rem;
       font-size: 0.72rem; font-weight: 300; line-height: 1.8;
@@ -130,8 +140,8 @@
     <div class="divider"></div>
     <img src="cccl.png" alt="fix: replace prod password with devpass — slide">
 
-    <div class="divider"></div>
-
+    <details>
+    <summary>// transcript</summary>
     <div class="script">
       <p>Claude Code removed a production password from my codebase&hellip;</p>
       <p class="pause">[pause]</p>
@@ -167,6 +177,7 @@
 
       <p>Thank you.</p>
     </div>
+    </details>
 
   </article>
 </body>

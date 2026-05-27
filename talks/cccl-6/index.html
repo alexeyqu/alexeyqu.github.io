@@ -73,6 +73,26 @@
       color: var(--muted); opacity: 0.7; letter-spacing: 0.04em;
     }
     .divider { height: 1px; background: var(--faint); }
+    .script {
+      display: flex; flex-direction: column; gap: 1rem;
+      font-size: 0.72rem; font-weight: 300; line-height: 1.8;
+      color: var(--text); letter-spacing: 0.02em;
+    }
+    .script p { margin: 0; }
+    .script .pause {
+      font-style: italic; color: var(--muted); opacity: 0.5;
+      font-size: 0.6rem; letter-spacing: 0.1em;
+    }
+    .script .punchline {
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+    }
+    .script .warning {
+      border-left: 1px solid var(--accent);
+      padding-left: 1rem;
+      display: flex; flex-direction: column; gap: 0.5rem;
+    }
     img {
       width: 100%; height: auto;
       border: 1px solid var(--faint);
@@ -106,6 +126,44 @@
 
     <h1>fix: replace prod password with devpass</h1>
     <p class="note">// lightning talk</p>
+
+    <div class="divider"></div>
+
+    <div class="script">
+      <p>Claude Code removed a production password from my codebase&hellip;</p>
+      <p class="pause">[pause]</p>
+      <p>&hellip;and put it in the commit message.</p>
+
+      <p>A few days ago, I was adding Docker infrastructure to an old project. The code had lived on my machine for a while, and I had tested it with production-ish databases and credentials.</p>
+      <p>So before committing, I asked Claude to clean it up.</p>
+      <p>And honestly, it did a good job.</p>
+      <p>It found passwords. It replaced them. I reviewed the diff.</p>
+      <p>It was clean.</p>
+      <p>So I said: okay, let&rsquo;s commit.</p>
+      <p>And then Claude suggested this commit message:</p>
+      <p class="punchline">fix: replace [actual prod password] with devpass</p>
+      <p class="pause">[pause]</p>
+      <p>The secret was gone from the code.</p>
+      <p>But it had landed in the metadata.</p>
+      <p>And that&rsquo;s what stuck with me.</p>
+
+      <p>We all know the traditional way of leaking sensitive data: putting it into a file and committing it to main.</p>
+      <p>But this was different.</p>
+      <p>The diff was clean. The dangerous output was somewhere else.</p>
+
+      <p>The security boundary is shifting. It&rsquo;s no longer just the codebase.</p>
+      <p>Commit messages. PR titles. Logs. Release notes.</p>
+      <p>Anything the agent sees can become something the agent writes.</p>
+
+      <div class="warning">
+        <p>So my tiny warning is this:</p>
+        <p>Don&rsquo;t just review the diff.</p>
+        <p>Review every surface the agent can write to.</p>
+        <p>Because if an agent can clean secrets from your code, it can also helpfully leave a message explaining exactly what it did.</p>
+      </div>
+
+      <p>Thank you.</p>
+    </div>
 
     <div class="divider"></div>
     <img src="cccl.png" alt="fix: replace prod password with devpass — slide">
